@@ -14,7 +14,7 @@ provider-specific functionality, including user profile.
 
 ## Installation
 
-	$ npm install passport-oauth2-password-grant
+	$ npm install passport-oauth2-password-grant-additional-params
 
 ## Usage
 
@@ -32,7 +32,7 @@ prototypes:
 The following demonstrates how to construct and use a PasswordGrantStrategy
 object:
 
-	var PasswordGrantStrategy = require('passport-oauth2-password-grant');
+	var PasswordGrantStrategy = require('passport-oauth2-password-grant-additional-params');
 
 	passport.use(new PasswordGrantStrategy({
 		tokenURL: 'https://www.example.com/oauth2/token',
@@ -57,10 +57,13 @@ example:
 		return function(req, res, next) {
 			var username = req.body.username;
 			var password = req.body.password;
-
+			var clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.ip;
+			//To get IPv4 address from like "::ffff:1.2.3.4"
+			clientIp = clientIp.toString().split(':').slice(-1)[0];
 			passport.authenticate('password-grant', {
 				username: username,
-				password: password
+				password: password,
+				client_ip: clientIp
 			})(req, res, next);
 		};
 	}

@@ -1,7 +1,7 @@
 {
-  "name": "passport-oauth2-password-grant",
-  "version": "0.0.3",
-  "description": "OAuth 2.0 password grant authentication strategy for Passport.",
+  "name": "passport-oauth2-password-grant-additional-params",
+  "version": "0.0.1",
+  "description": "OAuth 2.0 password grant authentication strategy for Passport with additional client information.",
   "keywords": [
     "passport",
     "auth",
@@ -14,15 +14,12 @@
     "password"
   ],
   "author": {
-    "name": "Sean Burke",
-    "email": "leftmostcat@gmail.com"
+    "name": "Nitin Daiya",
+    "email": "nitindaiya1991@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/leftmostcat/passport-oauth2-password-grant.git"
-  },
-  "bugs": {
-    "url": "http://github.com/leftmostcat/passport-oauth2-password-grant/issues"
+    "url": "git://github.com/ndaiya/passport-oauth2-password-grant.git"
   },
   "licenses": [
     {

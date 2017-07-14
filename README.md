@@ -63,7 +63,7 @@ example:
 			passport.authenticate('password-grant', {
 				username: username,
 				password: password,
-				client_ip: clientIp
+				additional_args: clientIp // pass additional params here
 			})(req, res, next);
 		};
 	}
@@ -95,8 +95,8 @@ provided during configuration.
 
 ## Credits
 
-- [Sean Burke](https://github.com/leftmostcat/) — Module author
-- [Jared Hanson](https://github.com/jaredhanson/) – Author of passport-oauth2,
+- [Nitin Daiya](https://github.com/ndaiya/) — Module author
+- [Sean Burke](https://github.com/leftmostcat/) — Author of passport-oauth2-password-grant
   from which this module was adapted and upon which this module relies
 
 ## License
